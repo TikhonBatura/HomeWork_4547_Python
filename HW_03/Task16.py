@@ -9,16 +9,20 @@
 from random import randint
 
 N = int(input("\nPlease enter number of elements in array: "))
-X = int(input("\nPlease enter number which you would like to find: "))
 count = 0
 list = []
 for el in range(0, N):
     i = randint(0, N)
     list.append(i)
-    if i == X:
-        count +=1
-        
+           
 print(f"\n{list}")
-print(f"\nNumber X found in list {count} times.\n")
+
+X = int(input("\nPlease enter number which you would like to find: "))
+
+for i in range(0,len(list)):
+    if list[i] == X:
+        count +=1 
+
+print(f"\nNumber {X} found in list {count} times.\n")
 
 
