@@ -22,5 +22,18 @@ for el in range(0, N):
     berries_on_bush.append(i)
 
 print(berries_on_bush)
-2
+berry_sum, berry_max_sum = 0, 0
+if N <= 3:
+    
+    for i in range(len(berries_on_bush)):
+        berry_max_sum += berries_on_bush[i]
+        i += 1
+else:
+    for i in range(len(berries_on_bush)-2): # "- 2", потому что максимальное число кустов для обработки 3, значит проверку надо заканачивать за 2 куста ДО.
+        berry_sum = berries_on_bush[i] + berries_on_bush[i+1] + berries_on_bush[i+2]
+        if berry_sum > berry_max_sum:
+            berry_max_sum = berry_sum
+        i += 1
+
+print(berry_max_sum)
 
