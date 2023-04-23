@@ -5,17 +5,18 @@
 
 
 from random import randint
+from ordered_set import OrderedSet
 
 n = int(input("\nPlease, enter number of elements in First array: "))
 m = int(input("Please, enter number of elements in Second array: "))
 list1 = []
 for el in range(0, n):
-    i = randint(0, n)
+    i = randint(0, 99)
     list1.append(i)
 
 list2 = []
 for el in range(0, m):
-    i = randint(0, m)
+    i = randint(0, 99)
     list2.append(i)
            
 print(f"\nFirst array: {list1}")
@@ -23,9 +24,9 @@ print(f"Second array: {list2}\n")
 
 list1.extend(list2)
 list1.sort()
+# print(list1)
 
-result = set()
+result = OrderedSet(list1)
 
-for el in list1:
-    result.add(el)
-print(result)
+for i in range(len(result)):
+    print(result[i], end=" ")
