@@ -20,7 +20,7 @@ def vowels (varible):
     else:
         return False
 
-verse = input("Уважаемый, Винни, веди свой стих: ")
+verse = input("Уважаемый, Винни, введи свой стих: ")
 words = list(filter(lambda word: not any(char.isdigit()
                                          for char in word), verse.split()))
 print(words)
